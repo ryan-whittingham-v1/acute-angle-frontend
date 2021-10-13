@@ -22,9 +22,12 @@ export const ALL_PRODUCTS_QUERY = gql`
 `;
 
 const ProductsListsStyles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 `;
 
 export default function Products({ page }) {

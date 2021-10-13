@@ -1,37 +1,36 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 import ItemStyles from './styles/ItemStyles';
-import Title from './styles/Title';
 import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
-import DeleteProduct from './DeleteProduct';
 import AddToCart from './AddToCart';
+import { useUser } from './User';
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  button {
+    z-index: 10;
+    cursor: pointer;
+  }
+`;
 
 export default function Product({ product }) {
+  const user = useUser();
+
   return (
-    <ItemStyles>
-      <img
-        src={product?.photo?.image?.publicUrlTransformed}
-        alt={product.name}
-      />
-      <Title>
-        <Link href={`/product/${product.id}`}>{product.name}</Link>
-      </Title>
-      <PriceTag>{formatMoney(product.price)}</PriceTag>
-      <p>{product.description}</p>
-      <div className="buttonList">
-        <Link
-          href={{
-            pathname: 'update',
-            query: {
-              id: product.id,
-            },
-          }}
-        >
-          Edit ✏️
-        </Link>
-        <AddToCart id={product.id} />
-        <DeleteProduct id={product.id}>Delete</DeleteProduct>
-      </div>
-    </ItemStyles>
+    <FlexWrapper>
+      <Link href={`/product/${product.id}`}>
+        <ItemStyles>
+          <img
+            src={product?.photo?.image?.publicUrlTransformed}
+            alt={product.name}
+          />
+          <h3>{product.name}</h3>
+        </ItemStyles>
+      </Link>
+      {user && <AddToCart id={product.id} />}
+    </FlexWrapper>
   );
 }
