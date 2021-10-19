@@ -8,16 +8,12 @@ const Dot = styled.div`
   padding: 0.5rem;
   line-height: 2rem;
   min-width: 3rem;
-  margin-left: 1rem;
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 `;
 
 const AnimationStyles = styled.span`
-  position: relative;
   .count {
-    display: block;
-    position: relative;
     transition: transform 0.4s;
     backface-visibility: hidden;
   }

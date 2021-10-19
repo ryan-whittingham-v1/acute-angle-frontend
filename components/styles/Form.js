@@ -39,13 +39,14 @@ const Form = styled.form`
   button,
   input[type='submit'] {
     width: auto;
-    background: red;
+    background: var(--primaryColor);
     color: white;
     border: 0;
     font-size: 2rem;
     font-weight: 600;
     padding: 0.5rem 1.2rem;
   }
+
   fieldset {
     border: 0;
     padding: 0;
@@ -54,19 +55,19 @@ const Form = styled.form`
       opacity: 0.5;
     }
     &::before {
-      height: 10px;
+      height: 5px;
       content: '';
       display: block;
-      background-image: linear-gradient(
-        to right,
-        #ff3019 0%,
-        #e2b04a 50%,
-        #ff3019 100%
-      );
     }
     &[aria-busy='true']::before {
       background-size: 50% auto;
       animation: ${loading} 0.5s linear infinite;
+      background-image: linear-gradient(
+        to right,
+        #03cffc 0%,
+        #7b00ff 50%,
+        #03cffc 100%
+      );
     }
   }
 `;

@@ -42,10 +42,11 @@ export default function SignUp() {
 
   if (data?.createUser) {
     return (
-      <p>
-        Signed up with {data.createUser.email} - Please sign in to use your
-        account.
-      </p>
+      <>
+        <p>Signed up with {data.createUser.email}</p>
+
+        <p>Please sign in to use your account.</p>
+      </>
     );
   }
   return (

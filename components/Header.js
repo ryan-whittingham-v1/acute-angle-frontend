@@ -4,51 +4,67 @@ import Cart from './Cart';
 import Nav from './Nav';
 import Search from './Search';
 
-const Logo = styled.div`
-  margin-left: 7rem;
-  margin-top: 10px;
-  position: relative;
-  z-index: 2;
+const HeaderStyles = styled.header`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+
+  > * {
+    flex: 1 100%;
+  }
+
+  .banner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid var(--lightGrey) 2px;
+  }
+
+  .nav {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 75%;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: calc(15px + 6 * ((100vw - 320px) / 300));
+      cursor: pointer;
+      color: var(--primaryColor);
+    }
+  }
+
   img {
     height: 150px;
     cursor: pointer;
   }
 `;
 
-const HeaderStyles = styled.header`
-  .bar {
-    border-bottom: 10px solid var(--black, black);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-
-  .sub-bar {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    border-bottom: 1px solid var(--black, black);
-  }
-`;
-
 export default function Header() {
   return (
     <HeaderStyles>
-      <div className="bar">
-        <Link href="/">
-          <Logo>
+      <div className="banner">
+        <div className="logo">
+          <Link href="/">
             <img
               src="../static/AcuteAngleLogo.png"
               alt="Acute Angle Accessories"
             />
-          </Logo>
-        </Link>
-        <Nav />
+          </Link>
+        </div>
+        <div className="nav">
+          <Link href="/">
+            <h1>Lightweight Aluminum Earrings</h1>
+          </Link>
+          <Nav />
+          <Cart />
+        </div>
       </div>
-      <div className="sub-bar">
+      <div className="search">
         <Search />
       </div>
-      <Cart />
     </HeaderStyles>
   );
 }
