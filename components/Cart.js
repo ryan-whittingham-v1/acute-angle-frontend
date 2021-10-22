@@ -13,23 +13,30 @@ export default function Cart() {
   const { cartOpen, closeCart } = useCart();
   if (!me) return null;
   return (
-    <CartStyles open={cartOpen}>
-      <header>
-        <Supreme>{me.name}'s Cart</Supreme>
-        <CloseButton type="button" onClick={closeCart}>
-          &times;
-        </CloseButton>
-      </header>
+    <>
+      {cartOpen && (
+        <CartStyles>
+          <div className="dimmer" onClick={closeCart} />
+          <div className="window">
+            <header>
+              <Supreme>{me.name}'s Cart</Supreme>
+              <CloseButton type="button" onClick={closeCart}>
+                &times;
+              </CloseButton>
+            </header>
 
-      <ul>
-        {me.cart.map((cartItem) => (
-          <CartItem key={cartItem.id} cartItem={cartItem} />
-        ))}
-      </ul>
-      <footer>
-        {formatMoney(calcTotalPrice(me.cart))}
-        <Checkout />
-      </footer>
-    </CartStyles>
+            <ul>
+              {me.cart.map((cartItem) => (
+                <CartItem key={cartItem.id} cartItem={cartItem} />
+              ))}
+            </ul>
+            <footer>
+              {formatMoney(calcTotalPrice(me.cart))}
+              <Checkout />
+            </footer>
+          </div>
+        </CartStyles>
+      )}
+    </>
   );
 }

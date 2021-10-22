@@ -13,11 +13,12 @@ export default function Nav() {
     <NavStyles>
       {user && (
         <>
-          <Link href="/account">Account</Link>
+          <Link href="/">Shop</Link>
 
           <button type="button" onClick={openCart}>
-            My Cart
+            Cart
           </button>
+          <Link href="/account">Account</Link>
           {/* <CartCount
             count={user.cart.reduce(
               (tally, cartItem) =>

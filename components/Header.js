@@ -23,14 +23,19 @@ const HeaderStyles = styled.header`
     border-bottom: solid var(--lightGrey) 2px;
   }
 
+  .logo {
+    width: 275px;
+    display: flex;
+  }
+
   .nav {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: column;
     flex: 1 75%;
     justify-content: center;
     align-items: center;
     h1 {
-      font-size: calc(15px + 6 * ((100vw - 320px) / 300));
+      font-size: calc(15px + 6 * ((100vw - 200px) / 300));
       cursor: pointer;
       color: var(--primaryColor);
     }
@@ -39,6 +44,7 @@ const HeaderStyles = styled.header`
   img {
     height: 150px;
     cursor: pointer;
+    margin: auto;
   }
 `;
 
@@ -58,8 +64,10 @@ export default function Header() {
           <Link href="/">
             <h1>Lightweight Aluminum Earrings</h1>
           </Link>
-          <Nav />
-          <Cart />
+          <div className="links">
+            <Nav />
+            <Cart />
+          </div>
         </div>
       </div>
       <div className="search">
