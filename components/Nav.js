@@ -17,15 +17,16 @@ export default function Nav() {
 
           <button type="button" onClick={openCart}>
             Cart
+            <CartCount
+              count={user.cart.reduce(
+                (tally, cartItem) =>
+                  tally + (cartItem.product ? cartItem.quantity : 0),
+                0
+              )}
+            />
           </button>
           <Link href="/account">Account</Link>
-          {/* <CartCount
-            count={user.cart.reduce(
-              (tally, cartItem) =>
-                tally + (cartItem.product ? cartItem.quantity : 0),
-              0
-            )}
-          /> */}
+
           <SignOut />
         </>
       )}

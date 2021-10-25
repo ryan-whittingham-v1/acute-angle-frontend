@@ -11,6 +11,11 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Allura';
+    src: url('/static/Allura-Regular.ttf')
+  }
+
   html {
     --primaryColor: #ff00a6;
     --secondaryColor: #00e1ff;

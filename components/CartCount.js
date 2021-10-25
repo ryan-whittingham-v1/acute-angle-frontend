@@ -2,18 +2,17 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 
 const Dot = styled.div`
-  background: var(--primaryColor);
-  color: white;
-  border-radius: 50%;
-  padding: 0.5rem;
-  line-height: 2rem;
+  color: var(--primaryColor);
   min-width: 3rem;
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 `;
 
 const AnimationStyles = styled.span`
+  position: relative;
   .count {
+    display: block;
+    position: relative;
     transition: transform 0.4s;
     backface-visibility: hidden;
   }

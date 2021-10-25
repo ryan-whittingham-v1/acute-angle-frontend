@@ -19,21 +19,25 @@ export default function Cart() {
           <div className="dimmer" onClick={closeCart} />
           <div className="window">
             <header>
-              <Supreme>{me.name}'s Cart</Supreme>
-              <CloseButton type="button" onClick={closeCart}>
-                &times;
-              </CloseButton>
+              <h2>Cart</h2>
+              <div className="close">
+                <CloseButton type="button" onClick={closeCart}>
+                  &times;
+                </CloseButton>
+              </div>
             </header>
-
-            <ul>
-              {me.cart.map((cartItem) => (
-                <CartItem key={cartItem.id} cartItem={cartItem} />
-              ))}
-            </ul>
+            <div className="items">
+              {me.cart.length === 0 && <p>Cart is empty.</p>}
+              <ul>
+                {me.cart.map((cartItem) => (
+                  <CartItem key={cartItem.id} cartItem={cartItem} />
+                ))}
+              </ul>
+            </div>
             <footer>
-              {formatMoney(calcTotalPrice(me.cart))}
-              <Checkout />
+              <p> Total: {formatMoney(calcTotalPrice(me.cart))}</p>
             </footer>
+            <Checkout />
           </div>
         </CartStyles>
       )}

@@ -35,9 +35,10 @@ const HeaderStyles = styled.header`
     justify-content: center;
     align-items: center;
     h1 {
-      font-size: calc(15px + 6 * ((100vw - 200px) / 300));
+      font-size: calc(20px + 15 * ((100vw - 200px) / 300));
       cursor: pointer;
       color: var(--primaryColor);
+      font-family: 'Allura', cursive;
     }
   }
 

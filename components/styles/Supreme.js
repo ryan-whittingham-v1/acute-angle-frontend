@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const Supreme = styled.h3`
-  background: var(--primaryColor);
-  color: white;
+  color: var(--secondaryColor);
   display: inline-block;
   padding: 4px 5px;
   transform: skew(-3deg);
