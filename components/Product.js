@@ -10,8 +10,8 @@ const FlexWrapper = styled.div`
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin-bottom: 25px;
   button {
-    z-index: 10;
     cursor: pointer;
   }
 `;

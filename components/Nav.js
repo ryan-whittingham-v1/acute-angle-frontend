@@ -13,8 +13,8 @@ export default function Nav() {
     <NavStyles>
       {user && (
         <>
-          <Link href="/">Shop</Link>
-
+          <SignOut />
+          <Link href="/account">Account</Link>
           <button type="button" onClick={openCart}>
             Cart
             <CartCount
@@ -25,9 +25,8 @@ export default function Nav() {
               )}
             />
           </button>
-          <Link href="/account">Account</Link>
 
-          <SignOut />
+          <Link href="/">Shop</Link>
         </>
       )}
       {!user && (

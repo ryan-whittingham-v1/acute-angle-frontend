@@ -6,9 +6,9 @@ const CloseButton = styled.button`
   border: 0;
   z-index: 5;
   border-radius: 5px;
-  height: 70px;
-  width: 70px;
-  font-size: 40px;
+  height: calc(25px + 2vw);
+  width: calc(25px + 2vw);
+  font-size: calc(10px + 2vw);
 `;
 
 export default CloseButton;

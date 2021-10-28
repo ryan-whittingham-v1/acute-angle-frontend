@@ -38,8 +38,14 @@ const HeaderStyles = styled.header`
       font-size: calc(20px + 15 * ((100vw - 200px) / 300));
       cursor: pointer;
       color: var(--primaryColor);
-      font-family: 'Allura', cursive;
+      font-family: 'Allura';
+      padding: 0;
+      margin: 0;
     }
+  }
+
+  .links {
+    width: 75%;
   }
 
   img {

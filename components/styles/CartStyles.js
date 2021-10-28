@@ -15,7 +15,6 @@ const CartStyles = styled.div`
     background-color: #fefefe;
     border: 1px solid #888;
     font-size: 1.5em;
-    color: palevioletred;
     border-radius: 10px;
     position: fixed;
     left: 50%;
@@ -24,18 +23,25 @@ const CartStyles = styled.div`
     width: 75vw;
     height: 75vh;
     z-index: 5;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
   header {
     display: flex;
     flex-direction: row;
-    border-bottom: 5px solid var(--black);
-    margin: 0px 10px;
+    margin: 0px 5px;
+    color: var(--primaryColor);
 
     h2 {
-      margin: 0px;
+      margin: 0px 10px;
       padding: 0;
       font-size: calc(30px + 6 * ((100vw - 200px) / 600));
     }
+  }
+  .body {
+    overflow: auto;
+    flex-grow: 1;
   }
   .close {
     flex: 1;
@@ -48,10 +54,28 @@ const CartStyles = styled.div`
     color: #303030;
   }
   footer {
-    border-top: 5px solid var(--black);
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-    margin: 0px 10px;
+
+    p {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0px 20px;
+    }
+    button {
+      flex: 1 100%;
+      background: var(--primaryColor);
+      border: 0;
+      font-size: 2rem;
+      color: white;
+      padding: 5px;
+      &:hover {
+        color: black;
+        background: var(--secondaryColor);
+        cursor: pointer;
+      }
+    }
   }
   ul {
     margin: 0;

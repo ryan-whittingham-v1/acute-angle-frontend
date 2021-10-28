@@ -4,16 +4,19 @@ import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
 
 const BigButton = styled.button`
-  font-size: 3rem;
-  background: none;
+  background: var(--secondaryColor);
   border: 0;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
   &:hover {
-    color: var(--primaryColor);
+    color: black;
+    background: var(--primaryColor);
     cursor: pointer;
   }
 `;
 
-const REMOVE_FROM_CART_MUTATION = gql`
+export const REMOVE_FROM_CART_MUTATION = gql`
   mutation REMOVE_FROM_CART_MUTATION($id: ID!) {
     deleteCartItem(id: $id) {
       id
@@ -37,7 +40,7 @@ export default function RemoveFromCart({ id }) {
       disabled={loading}
       title="Remove from cart"
     >
-      &times;
+      Delete
     </BigButton>
   );
 }

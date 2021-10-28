@@ -26,18 +26,21 @@ export default function Cart() {
                 </CloseButton>
               </div>
             </header>
-            <div className="items">
-              {me.cart.length === 0 && <p>Cart is empty.</p>}
-              <ul>
-                {me.cart.map((cartItem) => (
-                  <CartItem key={cartItem.id} cartItem={cartItem} />
-                ))}
-              </ul>
+            <div className="body">
+              <div className="items">
+                {me.cart.length === 0 && <p>Cart is empty.</p>}
+                <ul>
+                  {me.cart.map((cartItem) => (
+                    <CartItem key={cartItem.id} cartItem={cartItem} />
+                  ))}
+                </ul>
+              </div>
             </div>
             <footer>
               <p> Total: {formatMoney(calcTotalPrice(me.cart))}</p>
+              {/* <Checkout /> */}
+              <button type="button">Check Out</button>
             </footer>
-            <Checkout />
           </div>
         </CartStyles>
       )}
