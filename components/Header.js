@@ -24,8 +24,11 @@ const HeaderStyles = styled.header`
   }
 
   .logo {
-    width: 275px;
     display: flex;
+    height: 150px;
+    cursor: pointer;
+    flex: 1 20%;
+    justify-content: center;
   }
 
   .nav {
@@ -46,12 +49,6 @@ const HeaderStyles = styled.header`
 
   .links {
     width: 75%;
-  }
-
-  img {
-    height: 150px;
-    cursor: pointer;
-    margin: auto;
   }
 `;
 

@@ -13,18 +13,18 @@ const CartItemStyles = styled.li`
   padding-bottom: 10px;
 
   img {
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: solid white 3px;
     border-radius: 4px;
     filter: drop-shadow(10px 10px 4px #404040);
   }
-  .photo {
+  .photoWrapper {
     flex: 1 20%;
     display: flex;
-    align-content: center;
-    margin: 10px;
+    justify-content: center;
+    margin: 10px 0px;
   }
   .details {
     flex: 1 60%;
@@ -33,7 +33,7 @@ const CartItemStyles = styled.li`
 
     h3 {
       margin: auto;
-      font-size: calc(10px + 2vw);
+      font-size: calc(10px + 1vw);
     }
   }
   .remove {
@@ -101,11 +101,13 @@ export default function CartItem({ cartItem }) {
   if (!product) return null;
   return (
     <CartItemStyles>
-      <div className="photo">
-        <img
-          src={product.photo.image.publicUrlTransformed}
-          alt={product.name}
-        />
+      <div className="photoWrapper">
+        <div className="photo">
+          <img
+            src={product.photo.image.publicUrlTransformed}
+            alt={product.name}
+          />
+        </div>
       </div>
       <div className="details">
         <h3>

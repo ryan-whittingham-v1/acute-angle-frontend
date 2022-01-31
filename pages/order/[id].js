@@ -11,6 +11,10 @@ const SINGLE_ORDER_QUERY = gql`
       id
       charge
       total
+      street
+      city
+      state
+      zip
       user {
         id
       }
@@ -77,6 +81,11 @@ export default function SingleOrderPage({ query }) {
             </div>
           </div>
         ))}
+        <h2>Shipping To Address</h2>
+        <p>{order.street}</p>
+        <p>{order.city}</p>
+        <p>{order.state}</p>
+        <p>{order.zip}</p>
       </div>
     </OrderStyles>
   );

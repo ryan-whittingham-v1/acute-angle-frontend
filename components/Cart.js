@@ -1,3 +1,5 @@
+import { useRouter } from 'next/dist/client/router';
+
 import CartStyles from './styles/CartStyles';
 import Supreme from './styles/Supreme';
 import CloseButton from './styles/CloseButton';
@@ -11,6 +13,15 @@ import { Checkout } from './Checkout';
 export default function Cart() {
   const me = useUser();
   const { cartOpen, closeCart } = useCart();
+  const router = useRouter();
+
+  function handleClick() {
+    router.push({
+      pathname: `/checkout`,
+    });
+    closeCart();
+  }
+
   if (!me) return null;
   return (
     <>
@@ -39,7 +50,9 @@ export default function Cart() {
             <footer>
               <p> Total: {formatMoney(calcTotalPrice(me.cart))}</p>
               {/* <Checkout /> */}
-              <button type="button">Check Out</button>
+              <button type="button" onClick={handleClick}>
+                Check Out
+              </button>
             </footer>
           </div>
         </CartStyles>
