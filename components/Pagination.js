@@ -32,14 +32,14 @@ export default function Pagination({ page }) {
         </title>
       </Head>
       <Link href={`/products/${page - 1}`}>
-        <a aria-disabled={page <= 1}>⮜ Prev</a>
+        <a aria-disabled={page <= 1}>Prev</a>
       </Link>
       <p>
         Page {page} of {pageCount}
       </p>
 
       <Link href={`/products/${page + 1}`}>
-        <a aria-disabled={page >= pageCount}>Next ⮞</a>
+        <a aria-disabled={page >= pageCount}>Next</a>
       </Link>
     </PaginationStyles>
   );
